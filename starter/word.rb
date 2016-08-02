@@ -6,11 +6,17 @@ class Word
     if (@original_word.start_with? 'a', 'e', 'i', 'o', 'u')
       "#{@original_word}way"
     else
-      first_letter = @original_word[0]
-      rest_of_word = @original_word[1..-1]
-      "#{rest_of_word}#{first_letter}ay"
+      first_letter_group = @original_word[0..first_vowel-1]
+      rest_of_word = @original_word[first_vowel..-1]
+      "#{rest_of_word}#{first_letter_group}ay"
     end
+  end
+
+  def first_vowel
+    @original_word.index(/[aeiou]/)
   end
 end
 
-NewWord = Word.new "eagle"
+Word.new("bald").piglatinize
+Word.new("eagle").piglatinize
+Word.new("BIRD").piglatinize
