@@ -3,4 +3,8 @@ class Word
     @original_word = original_word.downcase
   end
 
+  def piglatinize
+
+  end
+
 end
