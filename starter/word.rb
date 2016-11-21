@@ -4,7 +4,18 @@ class Word
   end
 
   def piglatinize
-    
+    if (@original_word.start_with? 'a','e','i','o','u')
+      return @original_word + "way"
+    elsif (@original_word.start_with? 'gl', 'rh', 'qu','squ')
+      if @original_word.start_with? 'squ'
+        return "#{@original_word[3..-1]}squay"
+      else
+        return "#{@original_word[2..-1]}#{@original_word[0..1]}ay"
+      end
+    else
+      rest_of_word = @original_word[1..-1]
+      return "#{rest_of_word}#{@original_word[0]}ay"
+    end
   end
 
 end
