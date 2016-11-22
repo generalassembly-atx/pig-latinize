@@ -8,12 +8,12 @@ class Word
     if original_word.start_with?("a","e","i","o","u", "y")
       new_word = original_word + 'yay'
     else
-      new_word = (original_word.split(/([aeiou].*)/)).reverse.join + 'ay'
+      new_word = (original_word.split(/([aeiouy].*)/)).reverse.join + 'ay'
     end
     puts new_word
   end
 
 end
 
-word = Word.new("open")
+word = Word.new("rhythm")
 word.piglatinize
